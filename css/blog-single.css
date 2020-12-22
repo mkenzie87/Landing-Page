@@ -1,0 +1,114 @@
+/************************************
+          BLOG SINGLE CSS FILE
+ ************************************/
+
+.blog-hero-wrapper {
+	background-image: url(../images/Coffee-Blog.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 7% 0;
+}
+
+.blog-hero-title {
+	margin: 0;
+}
+
+.blog-hero-content {
+	background: #fff;
+	background: rgba(255, 255, 255, .8);
+	padding: 2%;
+	display: inline-block;
+}
+
+#blog-container {
+	display: grid;
+	grid-template: "main-blog" "sidebar";
+	margin-top: 50px;
+	width: 100%;
+}
+
+blockquote {
+	background: #f8f8f8;
+	display: inline-block;
+	padding: 2%;
+	font-size: 18px;
+	font-style: italic;
+	font-family: 'Fira Sans', sans-serif;
+	border-left: 3px solid #C4AA89;
+}
+
+.blog-single-title {
+	margin: 0 0 25px;
+}
+
+.blog-single-date {
+	text-transform: uppercase;
+	font-weight: 700;
+	font-family: "Fira Sans Condensed", sans-serif;
+	color: #C4AA89;
+}
+
+figure {
+	margin: 0;
+	position: relative;
+}
+
+figcaption {
+	position: absolute;
+	background: rgba(255, 255, 255, .8);
+	bottom: 33px;
+	padding: 12px;
+}
+
+#blog-single-container {
+	display: grid;
+	grid-template: "blog-single" "sidebar-single";
+	width: 100%;
+}
+
+.blog-single {
+	grid-area: blog-single;
+}
+
+.sidebar-single {
+	grid-area: sidebar-single;
+}
+
+.single-image {
+	width: 100%;
+}
+
+img.bio-image {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	margin-bottom: 20px;
+}
+
+.author-sidebar {
+	margin-bottom: 30px;
+}
+
+.shadow-box.author-bio {
+	text-align: center;
+	padding: 20px;
+}
+
+.blog-share {
+	justify-content: flex-start;
+	display: flex;
+	padding: 20px;
+	margin-bottom: 30px;
+}
+
+.company-title {
+	margin-top: 5px;
+}
+
+@media screen and (min-width: 992px) {
+	#blog-single-container {
+		grid-template-columns: 3fr 1fr;
+		grid-template-areas: "blog-single  sidebar-single";
+		grid-gap: 20px;
+	}
+}

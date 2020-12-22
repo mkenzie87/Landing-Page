@@ -1,0 +1,114 @@
+/************************************
+          MAIN CSS FILE
+ ************************************/
+/* links to header section css */
+@import 'header.css';
+/* links to hero section css */
+@import 'hero.css';
+/* links to grid section css */
+@import 'grid-blog.css';
+/* links to grid cta css */
+@import 'cta.css';
+/* links to footer css */
+@import 'footer.css';
+/* links to blog single css */
+@import 'blog-single.css';
+/* links to blog single css */
+@import 'about.css';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 1.0;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 25px;
+}
+
+h5 {
+  font-size: 22px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.55;
+}
+
+body {
+  margin: 0;
+}
+
+.btn {
+  text-transform: uppercase;
+  border-radius: 0;
+  color: #fff;
+  border: 0;
+  padding: 15px 30px;
+  font-weight: 700;
+  font-family: "Fira Sans Condensed", sans-serif;
+  text-decoration: none;
+}
+
+.tan-btn {
+  background: #C4AA89;
+  border: 2px solid #C4AA89;
+}
+
+.tan-btn:hover {
+  background: transparent;
+  color: #C4AA89;
+}
+
+.black-btn {
+  background: #000;
+  border: 2px solid #000;
+}
+
+.black-btn:hover {
+  background: transparent;
+  color: #000;
+}
+
+@media screen and (min-width: 1201px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 50px;
+  }
+
+  h3 {
+    font-size: 35px;
+  }
+}

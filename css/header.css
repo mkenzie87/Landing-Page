@@ -1,0 +1,53 @@
+/************************************
+          HEADER CSS FILE
+ ************************************/
+#header-wrapper {
+  display: grid;
+  padding: 15px 50px;
+  align-items: center;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.social-wrapper {
+  display: none;
+}
+
+.socials {
+  background: #000;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  line-height: 36px;
+  margin-right: 5px;
+}
+
+.socials:last-child {
+  margin-right: 0;
+}
+
+#logo-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#subscribe-wrapper {
+  display: none;
+}
+
+@media screen and (min-width: 769px) {
+  .social-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #subscribe-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #header-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

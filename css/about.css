@@ -1,0 +1,52 @@
+/************************************
+          ABOUT CSS FILE
+ ************************************/
+ #about-wrapper {
+   background-color: #f7f7f7;
+   padding: 50px;
+}
+
+.about-container {
+   display: grid;
+   grid-template-areas:
+    "about-image"
+    "about-info";
+    text-align: center;
+    max-width: 1200px;
+    margin:auto;
+ }
+
+ .about-intro {
+   margin-bottom: 50px;
+ }
+
+ .about-image {
+   grid-area: about-image;
+ }
+
+ .about-info {
+   grid-area: about-info;
+ }
+
+ .about-image {
+   width: 250px;
+   height: 250px;
+   border-radius: 50%;
+   margin: 0 auto 30px auto;
+ }
+
+ @media screen and (min-width: 769px) {
+   .about-container  {
+     grid-template-columns: 1fr 2fr;
+     grid-template:
+       "about-image about-info about-info";
+      grid-gap: 35px;
+      text-align: left;
+      align-items: center;
+   }
+
+   .about-image {
+     width: 450px;
+     height: 450px;
+   }
+ }

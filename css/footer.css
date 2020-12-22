@@ -1,0 +1,26 @@
+/************************************
+          FOOTER CSS FILE
+ ************************************/
+#footer-wrapper {
+  display: grid;
+  padding: 50px 20px;
+  grid-template-areas: "footer-logo""footer-news""footer-social";
+  justify-content: center;
+}
+
+.footer-logo {
+  grid-area: footer-logo;
+  text-align: center;
+}
+
+.footer-social {
+  grid-area: footer-social;
+  justify-content: center;
+  display: flex;
+}
+
+.footer-news {
+  grid-area: footer-news;
+  text-align: center;
+  margin-bottom: 15px;
+}

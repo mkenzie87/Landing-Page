@@ -1,0 +1,183 @@
+/************************************
+        GRID BLOG CSS FILE
+ ************************************/
+.content-wrapper {
+  margin: auto;
+  max-width: 1200px;
+  padding: 50px 20px 120px 20px;
+}
+
+.blog-intro h2,
+.blog-intro h3 {
+  margin: 5px auto;
+  text-align: center;
+}
+
+.shadow-box {
+  background-color: #FFFFFF;
+  box-shadow: 1px 1px 17px 1px rgba(0, 0, 0, 0.12);
+}
+
+.blog-inner {
+  padding: 20px;
+}
+
+.blog-title {
+  margin: 0;
+  font-weight: 700;
+}
+
+.blog-link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  font-family: "Fira Sans Condensed", sans-serif;
+}
+
+.grid-image-wrapper {
+  position: relative;
+}
+
+.blog-date {
+  position: absolute;
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 6px 20px;
+  bottom: 30px;
+  margin: 0;
+}
+
+div#blog-container {
+  display: grid;
+  grid-template: "main-blog""sidebar";
+  margin-top: 50px;
+  width: 100%;
+}
+
+.blog-wrapper {
+  display: grid;
+  grid-gap: 15px;
+  grid-template: "post-1""post-2""post-3""post-4";
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.grid-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 350px;
+  width: 100%;
+}
+
+.main-blog {
+  grid-area: main-blog;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.post-1 {
+  grid-area: post-1;
+}
+
+.post-2 {
+  grid-area: post-2;
+}
+
+.post-3 {
+  grid-area: post-3;
+}
+
+.post-4 {
+  grid-area: post-4;
+}
+
+.coffee-cups {
+  background-image: url("../images/Coffee-Cups.jpg");
+}
+
+.roasting-notes {
+  background-image: url("../images/Roasting-Notes.jpg");
+}
+
+.perfect-cups {
+  background-image: url("../images/Perfect-Espresso.jpg");
+}
+
+.brewing-methods {
+  background-image: url("../images/Brewing-Methods.jpg");
+}
+
+.mini-image {
+  background-image: url("../images/Mini-Post.jpg");
+}
+
+.mini-image {
+  width: 100px;
+  height: 100px;
+}
+
+.mini-post {
+  display: grid;
+  padding: 15px;
+  grid-template-columns: 100px 2fr;
+  grid-template-rows: 100px;
+  grid-gap: 15px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.sidebar-titles {
+  margin: 0 0 15px;
+}
+
+.popular-sidebar {
+  margin-bottom: 50px;
+}
+
+.blog-link:hover,
+.mini-link:hover {
+  color: #C4AA89
+}
+
+.mini-link {
+  color: #000;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .blog-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template:
+      "post-1 post-2"
+      "post-3 post-4";
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1025px) {
+  div#blog-container {
+    grid-template-columns: 3fr 1fr;
+    grid-template:
+      "main-blog main-blog main-blog sidebar";
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  div#blog-container {
+    grid-template-columns: 3fr 1fr;
+    grid-template:
+      "main-blog main-blog main-blog sidebar";
+    grid-gap: 20px;
+  }
+
+  .blog-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template:
+      "post-1 post-2"
+      "post-3 post-4";
+  }
+}

@@ -1,2 +1,2 @@
-# Landing-Page
-Landing Page Using JavaScript
+# Udacity-Blog
+Project 2 for Udacity Front-end Development

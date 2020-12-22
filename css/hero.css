@@ -1,0 +1,67 @@
+/************************************
+          HERO CSS FILE
+ ************************************/
+#hero-wrapper {
+  display: grid;
+  grid-template-areas: "hero""hero-content";
+}
+
+.hero-background {
+  background-image: url("../images/plate-of-coffee-leave.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-area: hero;
+}
+
+.hero-content {
+  display: none;
+  grid-area: hero-content;
+}
+
+.hero-title {
+  margin-top: 0;
+}
+
+.hero-desc {
+  display: none;
+}
+
+.hero-content-hidden {
+  background: #fff;
+  background: rgba(255, 255, 255, .8);
+  padding: 40px;
+  width: calc(90% - 80px);
+  margin: 50px auto;
+}
+
+.hero-content p {
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .hero-desc {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #hero-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "hero hero-content";
+    height: 88vh;
+    align-items: center;
+  }
+
+  .hero-background {
+    height: 88vh;
+  }
+
+  .hero-content {
+    padding: 0 10%;
+    display: block;
+  }
+
+  .hero-content-hidden {
+    display: none;
+  }
+}
