@@ -1,5 +1,5 @@
 /************************************
-          HEADER CSS FILE
+					HEADER CSS FILE
  ************************************/
 #header-wrapper {
   display: grid;
@@ -29,11 +29,45 @@
 
 #logo-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+}
+
+nav#nav-wrapper {
+  display: flex;
+  justify-content: flex-end;
 }
 
 #subscribe-wrapper {
   display: none;
+}
+
+#nav-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-items li {
+  display: inline;
+  margin-right: 10px;
+}
+
+#nav-items li:last-child {
+  margin-right: 0;
+}
+
+#nav-items a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 700;
+  padding: 8px;
+}
+
+#nav-items a:hover {
+  background: #c4aa89;
+  color: #fff;
 }
 
 @media screen and (min-width: 769px) {
