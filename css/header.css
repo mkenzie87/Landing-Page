@@ -6,6 +6,13 @@
   padding: 15px 50px;
   align-items: center;
   border-bottom: 1px solid #f8f8f8;
+  position: fixed;
+  background: #fff;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+	top: 0;
+	z-index: 999;
 }
 
 .social-wrapper {
