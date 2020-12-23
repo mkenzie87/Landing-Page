@@ -41,11 +41,69 @@ random.addEventListener("click", function() {
 console.log(random);
 
 
-document.querySelectorAll(".nav-li").forEach(box =>
-    box.addEventListener("click", () => box.classList.toggle("active"))
+document.querySelectorAll("li a.achor-links").forEach(random =>
+    random.addEventListener("click", () => random.classList.toggle("active"))
 );
 
 
+// function scrollToTargetAdjusted() {
+//      var element = document.getElementById('targetElement');
+//      var headerOffset = 45;
+//      var elementPosition = element.getBoundingClientRect().top;
+//      var offsetPosition = elementPosition - headerOffset;
+//
+//      window.scrollTo({
+//          top: offsetPosition,
+//          behavior: "smooth"
+//      });
+//  }
+
+
+// Remember to include the smooth scroll polyfill:
+// (https://github.com/iamdustan/smoothscroll)
+
+
+// // To Section
+// const navLinks = document.querySelectorAll(
+//   'nav a'
+// );
+//
+// Array.from(navLinks).forEach(navLink => {
+//   const href = navLink.getAttribute('href');
+//   const section = document.querySelector(href);
+//   const offset = 50 + 20; // nav and offset
+//
+//   navLink.onclick = e => {
+//     // get body position
+//     const bodyRect = document.body.getBoundingClientRect().top;
+//     // get section position relative
+//     const sectionRect = section.getBoundingClientRect().top;
+//     // subtract the section from body
+//     const sectionPosition = sectionRect - bodyRect;
+//     // subtract offset
+//     const offsetPosition = sectionPosition - offset;
+//
+//     e.preventDefault();
+//     window.scrollTo({
+//       top: offsetPosition,
+//       behavior: 'smooth'
+//     });
+//   }
+// })
+
+
+
+// // To Top
+// document.querySelector('#top').onclick = e => {
+//   e.preventDefault();
+//   window.scrollTo({top: 0, behavior: 'smooth'});
+// }
+//
+
+
+
+
+//
 // const cbox = document.querySelectorAll(".achor-links");
 //
 //  for (let i = 0; i < cbox.length; i++) {

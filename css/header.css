@@ -82,6 +82,10 @@ a.active {
     color: #fff !important;
 }
 
+.main-logo {
+	height: 60px;
+}
+
 @media screen and (min-width: 769px) {
   .social-wrapper {
     display: flex;
