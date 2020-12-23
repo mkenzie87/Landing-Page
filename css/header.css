@@ -77,6 +77,11 @@ nav#nav-wrapper {
   color: #fff;
 }
 
+a.active {
+    background: red;
+    color: #fff !important;
+}
+
 @media screen and (min-width: 769px) {
   .social-wrapper {
     display: flex;

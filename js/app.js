@@ -1,6 +1,7 @@
 console.log("Test Link");
 
 document.body.onload = newMenu;
+// document.body.onload = newMenu2;
 // TESTING
 
 // select the all (sections) in the page
@@ -18,7 +19,9 @@ function newMenu() {
     const data = section.dataset.nav; // get the menu name
     const idName = section.id; // get section id value
 
-    // Setting A Link Data
+    // Setting A Link and LI  Data
+    listItem.setAttribute('class', 'nav-li'); // Giving Href Link Value
+    achor.setAttribute('class', 'achor-links'); // Giving Href Link Value
     achor.textContent = data; // Giving Href Name Value
     achor.setAttribute('href', `#${idName}`); // Giving Href Link Value
 
@@ -26,3 +29,43 @@ function newMenu() {
     mainNav.appendChild(listItem); // appending li to ul
   }
 }
+
+
+
+// random id testing to add class
+var random = document.getElementById("random");
+
+random.addEventListener("click", function() {
+  random.classList.toggle("random");
+})
+console.log(random);
+
+
+document.querySelectorAll(".nav-li").forEach(box =>
+    box.addEventListener("click", () => box.classList.toggle("active"))
+);
+
+
+// const cbox = document.querySelectorAll(".achor-links");
+//
+//  for (let i = 0; i < cbox.length; i++) {
+//      cbox[i].addEventListener("click", function() {
+//        cbox[i].classList.toggle("active");
+//      });
+//  }
+
+
+
+// var className = document.getElementsByClassName("achor-links");
+//
+// var elements = document.getElementsByClassName("achor-links");
+// console.log(className);
+// for (i = 0; i < elements.length; ++i) {
+//
+//   elements[i].addEventListener('click', function() {
+//     console.log(elements);
+//     // Do something amazing
+//
+//   });
+//
+// }
