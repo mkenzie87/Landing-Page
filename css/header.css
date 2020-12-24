@@ -78,7 +78,7 @@ nav#nav-wrapper {
 }
 
 a.active {
-    background: red;
+    background: #c4aa89;
     color: #fff !important;
 }
 
