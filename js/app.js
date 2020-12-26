@@ -42,96 +42,278 @@ function newMenu() {
   });
 
 
+  //This sections check if section is in the viewport and adds a class
+
+  function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+
+      );
 
 
-
-
-
-let sectionPosition = document.querySelectorAll('section');
-
-
-function isInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-
-  );
-}
-
-function add_class_on_scroll() {
-
-  for (const active of addActive) { // Loops through A Link Classes
-    active.classList.add("active"); // Removes the classes for all Links of Active
   }
-}
-
-function add_class_on_scroll2() {
-    let testerEl = document.getElementById("nav-items");
-    testerEl.classList.add("active"); // Removes the classes for all Links of Active
-
-}
-
-function remove_class_on_scroll() {
-  for (const active of addActive) { // Loops through A Link Classes
-    active.classList.remove("active"); // Removes the classes for all Links of Active
-  }
-}
-
-let tester = document.getElementById("cta-wrapper");
-let testerEl = document.getElementById("nav-items");
 
 
-document.addEventListener('scroll', function () {
+  const box = document.querySelector('#in-viewport');
+  const message = document.querySelector('#message');
 
-  // for (const position of sectionPosition) {
-  //   let itemPos = (position.getBoundingClientRect());
+  document.addEventListener('scroll', function () {
+      const messageText = isInViewport(box) ?
+          'The box is visible in the viewport' :
+          'The box is not visible in the viewport';
 
-    if(isInViewport(tester)) {
-      console.log("true")
-    } else {
-      remove_class_on_scroll()
-    }
-    //console.log(itemPos);
-  // }
+      console.log(messageText);
 
-});
+  }, {
+      passive: true
+  });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // var isOutOfViewport = function (elem) {
   //
+  //   // Get element's bounding
+  //   var bounding = elem.getBoundingClientRect();
   //
-  // const box = document.querySelector('.box');
-  // const message = document.querySelector('#message');
+  //   // Check if it's out of the viewport on each side
+  //   var out = {};
+  //   out.top = bounding.top < 0;
+  //   out.left = bounding.left < 0;
+  //   out.bottom = bounding.bottom > (window.innerHeight || document.documentElement.clientHeight);
+  //   out.right = bounding.right > (window.innerWidth || document.documentElement.clientWidth);
+  //   out.any = out.top || out.left || out.bottom || out.right;
   //
+  //   return out;
+  //
+  // };
+  //
+  // var elem = document.querySelector('section#about-wrapper');
+  //
+  // var logViewport = function () {
+  //   var isOut = isOutOfViewport(elem);
+  //   if (isOut.any) {
+  //     console.log('Not in the viewport! =(');
+  //     ul.classList.remove("test");
+  //   } else {
+  //     console.log('In the viewport! =)');
+  //     ul.classList.add("test");
+  //   }
+  // };
+  //
+  // logViewport();
+  // window.addEventListener('scroll', logViewport, false);
+  //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+// let sectionPosition = document.querySelectorAll('section');
+//
+//
+//
+//
+// function add_class_on_scroll() {
+//
+//   for (const active of addActive) { // Loops through A Link Classes
+//     active.classList.add("active"); // Removes the classes for all Links of Active
+//   }
+// }
+//
+// function add_class_on_scroll2() {
+//     let testerEl = document.getElementById("nav-items");
+//     testerEl.classList.add("active"); // Removes the classes for all Links of Active
+//
+// }
+//
+// function remove_class_on_scroll() {
+//   for (const active of addActive) { // Loops through A Link Classes
+//     active.classList.remove("active"); // Removes the classes for all Links of Active
+//   }
+// }
+//
+// let tester = document.querySelector("#cta-wrapper");
+//
+//
+// const sections = document.querySelectorAll("section");
+//
+// window.onscroll = function() {
+//   // Don't run the rest of the code if every section is already visible
+//   if (!document.querySelectorAll('section.fly-in:not(.visible)')) return;
+//
+//   // Run this code for every section in sections
+//   for (const section of sections) {
+//     // if (section.getBoundingClientRect().top <= window.innerHeight * 0.75 && section.getBoundingClientRect().top > 0) {
+//     //   section.classList.add('visible');
+//     // }
+//
+//     if(isInViewport(section)){
+//       console.log('visible');
+//     } else {
+//       console.log('not visible');
+//     }
+//
+//   }
+// };
+//
+//
+// function isInViewport(el) {
+//   const rect = el.getBoundingClientRect();
+//   return (
+//     rect.top >= 0 &&
+//     rect.left >= 0 &&
+//     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+//     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function isInViewport(el) {
+//   const rect = el.getBoundingClientRect();
+//   return (
+//     rect.top >= 0 &&
+//     rect.left >= 0 &&
+//     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+//     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+//
+//   );
+// }
+// console.log(tester.getBoundingClientRect());
+// console.log(tester.getBoundingClientRect().top);
+//   document.addEventListener('scroll', function () {
+//       const messageText = isInViewport(tester) ?
+//           'The box is visible in the viewport' :
+//           'The box is not visible in the viewport';
+//
+//       console.log(messageText)
+//
+//   });
+
+
   // document.addEventListener('scroll', function () {
-  //     const messageText = isInViewport(box) ?
-  //         'The box is visible in the viewport' :
-  //         'The box is not visible in the viewport';
+
+    // for (const position of sectionPosition) {
+    //   let itemPos = (position.getBoundingClientRect());
+
+  //     if(isInViewport(tester)) {
+  //       console.log("true")
+  //     } else {
+  //       remove_class_on_scroll()
+  //     }
+  //     //console.log(itemPos);
+  //   // }
   //
-  //     message.textContent = messageText;
-  //
-  // }, {
-  //     passive: true
   // });
 
-
-
-
-
 }
-
-
-
-
-
-
-
-// random id testing to add class
-var random = document.getElementById("random");
-
-random.addEventListener("click", function() {
-  random.classList.toggle("random");
-})
-console.log(random);

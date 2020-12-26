@@ -16,6 +16,12 @@
 /* links to blog single css */
 @import 'about.css';
 
+
+#in-viewport {
+	background-color: rebeccapurple;
+	height: 12em;
+}
+
 html {
   scroll-behavior: smooth;
 }
