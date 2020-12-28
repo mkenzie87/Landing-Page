@@ -41,19 +41,7 @@ function newMenu() {
   });
 
 
-  // This sections check if section is in the viewport and adds a class
-
-  // function isInViewport(el) {
-  //   const rect = el.getBoundingClientRect();
-  //   return (
-  //     rect.top >= 0 &&
-  //     rect.left >= 0 &&
-  //     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-  //     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  //
-  //   );
-  //
-  // }
+  // // This sections check if section is in the viewport and adds a class
 
   function isInViewport(el) {
     let top = el.offsetTop;
@@ -75,6 +63,7 @@ function newMenu() {
     );
   }
 
+// Scrolling Event Listner to check menu and section data names and add Classes
 
   document.addEventListener('scroll', function() {
     let addActive = document.querySelectorAll(".achor-links"); // Selects all A link Classes
