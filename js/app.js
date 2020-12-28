@@ -2,8 +2,10 @@ console.log("Test Link"); // Testign file connecting
 
 document.body.onload = newMenu;
 
-// select the all (sections) in the page
+// Global Vars
 let mainHeading = document.querySelectorAll('section');
+let ul = document.querySelector('ul'); // Selects the UL Elements in Nav
+let addActive = document.querySelectorAll(".achor-links"); // Selects all A link Classes
 
 function newMenu() {
   for (const section of mainHeading) {
@@ -29,291 +31,77 @@ function newMenu() {
 
   // This section add event listner on click for Navigation
 
-  let ul = document.querySelector('ul'); // Selects the UL Elements in Nav
-  let addActive = document.querySelectorAll(".achor-links");  // Selects all A link Classes
-
   ul.addEventListener("click", function(e) { // start of event listner on click UL
 
     for (const active of addActive) { // Loops through A Link Classes
 
       active.classList.remove("active"); // Removes the classes for all Links of Active
     }
-      e.target.classList.add("active"); // Targets the a link and add ths Active Class
+    e.target.classList.add("active"); // Targets the a link and add ths Active Class
   });
 
 
   //This sections check if section is in the viewport and adds a class
 
+  // function isInViewport(el) {
+  //   const rect = el.getBoundingClientRect();
+  //   return (
+  //     rect.top >= 0 &&
+  //     rect.left >= 0 &&
+  //     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+  //     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  //
+  //   );
+  //
+  // }
+
   function isInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      return (
-          rect.top >= 0 &&
-          rect.left >= 0 &&
-          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    let top = el.offsetTop;
+    let left = el.offsetLeft;
+    let width = el.offsetWidth;
+    let height = el.offsetHeight;
 
-      );
+    while (el.offsetParent) {
+      el = el.offsetParent;
+      top += el.offsetTop;
+      left += el.offsetLeft;
+    }
 
-
+    return (
+      top < (window.pageYOffset + window.innerHeight) &&
+      left < (window.pageXOffset + window.innerWidth) &&
+      (top + height) > window.pageYOffset &&
+      (left + width) > window.pageXOffset
+    );
   }
 
 
-  const box = document.querySelector('#in-viewport');
-  const message = document.querySelector('#message');
 
-  document.addEventListener('scroll', function () {
-      const messageText = isInViewport(box) ?
-          'The box is visible in the viewport' :
-          'The box is not visible in the viewport';
+  // const box = document.querySelector('#cta-wrapper');
+  // const message = document.querySelector('#message');
 
-      console.log(messageText);
+  // console.log(box.getBoundingClientRect());
 
-  }, {
-      passive: true
-  });
+  document.addEventListener('scroll', function(e) {
 
+    for (const scroller of mainHeading) {
+      const sectionID = scroller.id; // get section id value
 
+      if (isInViewport(scroller)) {
+        console.log(sectionID);
+        scroller.classList.add("active-section");
 
+        for (const navActive of addActive) { // Loops through A Link Classes
+          e.target.classList.add("active"); // Removes the classes for all Links of Active
+        }
 
+      } else {
+        // console.log('The box is not visible in the viewport');
+        scroller.classList.remove("active-section");
+      }
+    }
+    });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // var isOutOfViewport = function (elem) {
-  //
-  //   // Get element's bounding
-  //   var bounding = elem.getBoundingClientRect();
-  //
-  //   // Check if it's out of the viewport on each side
-  //   var out = {};
-  //   out.top = bounding.top < 0;
-  //   out.left = bounding.left < 0;
-  //   out.bottom = bounding.bottom > (window.innerHeight || document.documentElement.clientHeight);
-  //   out.right = bounding.right > (window.innerWidth || document.documentElement.clientWidth);
-  //   out.any = out.top || out.left || out.bottom || out.right;
-  //
-  //   return out;
-  //
-  // };
-  //
-  // var elem = document.querySelector('section#about-wrapper');
-  //
-  // var logViewport = function () {
-  //   var isOut = isOutOfViewport(elem);
-  //   if (isOut.any) {
-  //     console.log('Not in the viewport! =(');
-  //     ul.classList.remove("test");
-  //   } else {
-  //     console.log('In the viewport! =)');
-  //     ul.classList.add("test");
-  //   }
-  // };
-  //
-  // logViewport();
-  // window.addEventListener('scroll', logViewport, false);
-  //
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-// let sectionPosition = document.querySelectorAll('section');
-//
-//
-//
-//
-// function add_class_on_scroll() {
-//
-//   for (const active of addActive) { // Loops through A Link Classes
-//     active.classList.add("active"); // Removes the classes for all Links of Active
-//   }
-// }
-//
-// function add_class_on_scroll2() {
-//     let testerEl = document.getElementById("nav-items");
-//     testerEl.classList.add("active"); // Removes the classes for all Links of Active
-//
-// }
-//
-// function remove_class_on_scroll() {
-//   for (const active of addActive) { // Loops through A Link Classes
-//     active.classList.remove("active"); // Removes the classes for all Links of Active
-//   }
-// }
-//
-// let tester = document.querySelector("#cta-wrapper");
-//
-//
-// const sections = document.querySelectorAll("section");
-//
-// window.onscroll = function() {
-//   // Don't run the rest of the code if every section is already visible
-//   if (!document.querySelectorAll('section.fly-in:not(.visible)')) return;
-//
-//   // Run this code for every section in sections
-//   for (const section of sections) {
-//     // if (section.getBoundingClientRect().top <= window.innerHeight * 0.75 && section.getBoundingClientRect().top > 0) {
-//     //   section.classList.add('visible');
-//     // }
-//
-//     if(isInViewport(section)){
-//       console.log('visible');
-//     } else {
-//       console.log('not visible');
-//     }
-//
-//   }
-// };
-//
-//
-// function isInViewport(el) {
-//   const rect = el.getBoundingClientRect();
-//   return (
-//     rect.top >= 0 &&
-//     rect.left >= 0 &&
-//     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-//     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-//   );
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function isInViewport(el) {
-//   const rect = el.getBoundingClientRect();
-//   return (
-//     rect.top >= 0 &&
-//     rect.left >= 0 &&
-//     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-//     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-//
-//   );
-// }
-// console.log(tester.getBoundingClientRect());
-// console.log(tester.getBoundingClientRect().top);
-//   document.addEventListener('scroll', function () {
-//       const messageText = isInViewport(tester) ?
-//           'The box is visible in the viewport' :
-//           'The box is not visible in the viewport';
-//
-//       console.log(messageText)
-//
-//   });
-
-
-  // document.addEventListener('scroll', function () {
-
-    // for (const position of sectionPosition) {
-    //   let itemPos = (position.getBoundingClientRect());
-
-  //     if(isInViewport(tester)) {
-  //       console.log("true")
-  //     } else {
-  //       remove_class_on_scroll()
-  //     }
-  //     //console.log(itemPos);
-  //   // }
-  //
-  // });
 
 }
