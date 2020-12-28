@@ -41,7 +41,7 @@ function newMenu() {
   });
 
 
-  //This sections check if section is in the viewport and adds a class
+  // This sections check if section is in the viewport and adds a class
 
   // function isInViewport(el) {
   //   const rect = el.getBoundingClientRect();
@@ -75,26 +75,33 @@ function newMenu() {
     );
   }
 
-  document.addEventListener('scroll', function(e) {
 
-
-
+  document.addEventListener('scroll', function() {
+    let addActive = document.querySelectorAll(".achor-links"); // Selects all A link Classes
     for (const scroller of mainHeading) {
-      const sectionID = scroller.id; // get section id value
+      const sectionData = scroller.dataset.nav; // get the menu name
       if (isInViewport(scroller)) {
         scroller.classList.add("active-section");
-        console.log(sectionID);
+        // console.log(sectionID);
         for (const active of addActive) { // Loops through A Link Classes
-            const aHref = active.href;
-            if(sectionID == aHref) {
-              active.classList.add("active");
-            }
-      }
+          let aHref = active.innerHTML;
+          // console.log(aHref)// const aHref = active.href;
+          // console.log (sectionData + " Scroller")
+          if (sectionData == aHref) {
+            active.classList.add("active");
+            console.log("WORKING");
+          } else {
+            active.classList.remove("active");
+          }
+        }
       } else {
         // console.log('The box is not visible in the viewport');
         scroller.classList.remove("active-section");
       }
     }
   });
+
+
+
 
 }
