@@ -75,33 +75,26 @@ function newMenu() {
     );
   }
 
-
-
-  // const box = document.querySelector('#cta-wrapper');
-  // const message = document.querySelector('#message');
-
-  // console.log(box.getBoundingClientRect());
-
   document.addEventListener('scroll', function(e) {
+
+
 
     for (const scroller of mainHeading) {
       const sectionID = scroller.id; // get section id value
-
       if (isInViewport(scroller)) {
-        console.log(sectionID);
         scroller.classList.add("active-section");
-
-        for (const navActive of addActive) { // Loops through A Link Classes
-          e.target.classList.add("active"); // Removes the classes for all Links of Active
-        }
-
+        console.log(sectionID);
+        for (const active of addActive) { // Loops through A Link Classes
+            const aHref = active.href;
+            if(sectionID == aHref) {
+              active.classList.add("active");
+            }
+      }
       } else {
         // console.log('The box is not visible in the viewport');
         scroller.classList.remove("active-section");
       }
     }
-    });
-
-
+  });
 
 }
